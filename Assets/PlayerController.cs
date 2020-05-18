@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float inputHorizontal;
 
+    private bool facingLeft = false; //Player's goal is to go right so it must face right not left.
 
 
 
@@ -42,5 +43,23 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        if (facingLeft == true && inputHorizontal > 0) //If player is moving right then player will face right.
+        {
+            Flip();
+        }
+        else if (facingLeft == false && inputHorizontal < 0) //If player is moving left then player will face left.
+        {
+            Flip();
+        }
     }
+
+    void Flip() //Void allowing the player to face left or right.
+    {
+        facingLeft = !facingLeft; //Player will be not be facing left on default.
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1; //Scale of player will be multiplied by -1 meaning it will flip to the left or right.
+        transform.localScale = Scaler;
+    }
+
 }
