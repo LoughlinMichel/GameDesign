@@ -12,6 +12,9 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart; //Sprite/Picture of a red (full heart)
     public Sprite emptyHeart; //Sprite/Picture of a black (empty heart)
 
+    [SerializeField] private Transform player = null;
+    [SerializeField] private Transform respawnPoint = null;
+
     void Update()
     {
         for (int x = 0; x < hearts.Length; x++)
@@ -34,5 +37,30 @@ public class PlayerHealth : MonoBehaviour
                 hearts[x].enabled = false;
             }
         }
+
+        if (health <= 0) //If health is equal to or less than 0 player will respawn.
+        {
+            Die();
+        }
     }
+
+
+    public void TakeDamage()
+    {
+        Debug.Log("Hit");
+        health -= 1;
+    }
+
+    void Die()
+    {
+        Debug.Log("GameOver");
+        Invoke("Respawn", 0);
+    }
+
+    public void Respawn()
+    {
+        health = 3;
+        player.transform.position = respawnPoint.transform.position; //When player dies will respawn at the respawn point with 3 new hearts.
+    }
+
 }
