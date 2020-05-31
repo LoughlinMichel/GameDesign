@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -40,7 +41,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0) //If health is equal to or less than 0 player will respawn.
         {
-            Die();
+            Debug.Log("Gameover");
+            SceneManager.LoadScene("Dead Menu");
         }
     }
 
@@ -51,16 +53,8 @@ public class PlayerHealth : MonoBehaviour
         health -= 1;
     }
 
-    void Die()
+    public void NextLevel()
     {
-        Debug.Log("GameOver");
-        Invoke("Respawn", 0);
+        health += 3;
     }
-
-    public void Respawn()
-    {
-        health = 3;
-        player.transform.position = respawnPoint.transform.position; //When player dies will respawn at the respawn point with 3 new hearts.
-    }
-
 }
