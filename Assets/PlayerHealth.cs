@@ -13,8 +13,12 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart; //Sprite/Picture of a red (full heart)
     public Sprite emptyHeart; //Sprite/Picture of a black (empty heart)
 
-    [SerializeField] private Transform player = null;
-    [SerializeField] private Transform respawnPoint = null;
+    private RippleProcessor cameraRipple;
+
+    private void Start()
+    {
+        cameraRipple = Camera.main.GetComponent<RippleProcessor>();
+    }
 
     void Update()
     {
@@ -50,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage()
     {
         Debug.Log("Hit");
+        cameraRipple.RippleEffect();
         health -= 1;
     }
 

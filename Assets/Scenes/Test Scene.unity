@@ -836,6 +836,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -943,6 +944,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8c2df7d1c53ed4d876e2a355abdebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RippleMaterial: {fileID: 2100000, guid: 56228d7de7d1b764db13b4be78021050, type: 2}
+  MaxAmount: 25
+  Friction: 0.7
 --- !u!1 &547245705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975911346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.62, y: -0.95, z: 0}
+  m_LocalPosition: {x: 8.32, y: -0.95, z: 0}
   m_LocalScale: {x: 1, y: 5.189, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1779,8 +1795,6 @@ MonoBehaviour:
     type: 3}
   emptyHeart: {fileID: -112134098635314758, guid: 1d3f76bc0ed5b3849b23a313c36c0632,
     type: 3}
-  player: {fileID: 1647804070}
-  respawnPoint: {fileID: 17278796}
 --- !u!1 &1716605538
 GameObject:
   m_ObjectHideFlags: 0
