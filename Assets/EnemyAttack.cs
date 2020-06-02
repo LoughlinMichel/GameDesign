@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
     {
         Debug.Log("Hit");
         other.gameObject.GetComponent<PlayerHealth>().TakeDamage();
-        Invoke("Invincible", 1);
+       // Invoke("Invincible", 1);
     }
 
     void Invincible()

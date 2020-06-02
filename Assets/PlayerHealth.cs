@@ -53,7 +53,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("Hit");
         cameraRipple.RippleEffect();
         health -= 1;
     }
