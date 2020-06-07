@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeadMenu : MonoBehaviour
-{  
+{
     public void Respawn()
     {
         Debug.Log("Resapwn");
@@ -17,3 +17,4 @@ public class DeadMenu : MonoBehaviour
         Application.Quit();
     }
 }
+

@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
 
     private RippleProcessor cameraRipple;
 
+    [SerializeField] private Transform player = null;
+    [SerializeField] private Transform respawnPoint = null;
+
     private void Start()
     {
         cameraRipple = Camera.main.GetComponent<RippleProcessor>();
@@ -46,7 +49,9 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0) //If health is equal to or less than 0 player will respawn.
         {
             Debug.Log("Gameover");
-            SceneManager.LoadScene("Dead Menu");
+            health += 3;
+            player.transform.position = respawnPoint.transform.position;
+            //SceneManager.LoadScene("Dead Menu");
         }
     }
 

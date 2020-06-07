@@ -61,5 +61,4 @@ public class PlayerController : MonoBehaviour
         Scaler.x *= -1; //Scale of player will be multiplied by -1 meaning it will flip to the left or right.
         transform.localScale = Scaler;
     }
-
 }

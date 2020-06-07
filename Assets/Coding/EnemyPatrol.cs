@@ -19,7 +19,7 @@ public class EnemyPatrol : MonoBehaviour
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetecton.position, Vector2.down, 2f); //Raycast will check if there is ground 2 metres below the "groundDetection" which infront of enemy.
 
-        if (groundInfo.collider == false)
+        if (groundInfo.collider == false) //If no gorund is detected then...
         {
             if (movingLeft == false) //Enemy will turn around and go left if it cant go right.
             {

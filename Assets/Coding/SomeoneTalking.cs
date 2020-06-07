@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class SomeoneTalking : MonoBehaviour
 {
@@ -11,10 +11,14 @@ public class SomeoneTalking : MonoBehaviour
     private int index;
     public GameObject continueButton;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        StartCoroutine(Type());
+        if (col.gameObject.tag == "Player")
+        {
+            StartCoroutine(Type());
+        }
     }
+
 
     void Update()
     {
@@ -36,6 +40,8 @@ public class SomeoneTalking : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
+
+
 
     public void NextSentence()
     {
