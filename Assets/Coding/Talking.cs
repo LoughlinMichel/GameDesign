@@ -15,7 +15,7 @@ public class Talking : MonoBehaviour
     void Start()
     {
         StartCoroutine(Type()); //Starts Coroutine, which works as a timer which plays a function after a certain amount of time.
-        controller.enabled = false;
+        controller.enabled = false; //This disbales the controller from the start while text is displayed.
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class Talking : MonoBehaviour
         if(textDisplay.text == sentences[index]) //If the text box has a sentence in it then...
         {
             continueButton.SetActive(true); //Button will be displayed and will be able to use.
-            controller.enabled = false;
+            controller.enabled = false; //This disables the player's movement while text is displayed.
 
         }
         else if(textDisplay.text != sentences[index]) //If the text box doesnt have a sentence then...
@@ -52,7 +52,7 @@ public class Talking : MonoBehaviour
         else
         {
             textDisplay.text = "";
-            controller.enabled = true; //This is 
+            controller.enabled = true; //This enables the controller after it being disabled
         }
     }
 }
