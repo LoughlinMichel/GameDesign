@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Three.unity
     guid: 078d73ba6e6d855488f05baacd285869
+  - enabled: 1
+    path: Assets/Scenes/Winning Menu.unity
+    guid: 4030e8b6f82fb214e922045c90683ea1
   m_configObjects: {}

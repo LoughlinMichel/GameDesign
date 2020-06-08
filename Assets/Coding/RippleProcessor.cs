@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class RippleProcessor : MonoBehaviour
 {
-    public Material RippleMaterial;
-    public float MaxAmount = 50f;
-
-    [Range(0, 1)]
-    public float Friction = .9f;
-
-    private float Amount = 0f;
+    public Material RippleMaterial; //Public material so we can place the ripple material shader in it.
+    public float MaxAmount = 50f; //This flaot can be changed within the inspect of unity, this is how strong the ripple is.
+    [Range(0, 1)] //These flaots can be changed between 0 - 1.
+    public float Friction = .9f; //This is how long the ripple is, mine is set at 0.9f.
+    private float Amount = 0f; //This is the least amount of time the ripple can be.
 
     void Update()
     {
-        this.RippleMaterial.SetFloat("_Amount", this.Amount);
-        this.Amount *= this.Friction;
+        this.RippleMaterial.SetFloat("_Amount", this.Amount); //The ripple will last this amount of time and then finishes at this float.
+        this.Amount *= this.Friction; //The tipple will be this storng or weak, this intense.
     }
 
     public void RippleEffect()
     {
-        this.Amount = this.MaxAmount;
-        Vector3 pos = Input.mousePosition;
-        this.RippleMaterial.SetFloat("_CenterX", pos.x);
-        this.RippleMaterial.SetFloat("_CenterY", pos.y);
+        this.Amount = this.MaxAmount; //The ripple amount will last this amount of time.
+        Vector3 pos = Input.mousePosition; //Mouse was orginally used to test the ripple efftec to see if it works.
+        this.RippleMaterial.SetFloat("_CenterX", pos.x); //This allows the ripple to work on the x.
+        this.RippleMaterial.SetFloat("_CenterY", pos.y); //This allows the ripple to work on the y.
     }
 
-    void OnRenderImage(RenderTexture src, RenderTexture dst)
+    void OnRenderImage(RenderTexture src, RenderTexture dst) //Void for the ripple image.
     {
-        Graphics.Blit(src, dst, this.RippleMaterial);
+        Graphics.Blit(src, dst, this.RippleMaterial); //Renders the ripple effect and communicates to the ripple material.
     }
 }

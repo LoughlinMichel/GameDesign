@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 9f;
-
-    const float jumpForce = 15f;
-
-    public LayerMask whatIsGround;
-
-
-    private Rigidbody2D rb;
-    private float inputHorizontal;
-
+    private float speed = 9f; //Player's x is multiplied by this, its private as it doesnt need to be changed.
+    const float jumpForce = 15f; //Player's y is multiplied by this, this is constant as it doesnt change.
+    public LayerMask whatIsGround; //This is the layer that is detected for ground.
+    private Rigidbody2D rb; //This is how i relate to the player.
+    private float inputHorizontal; //This is my player's x movement.
     private bool facingLeft = false; //Player's goal is to go right so it must face right not left.
-
-
 
     private void Start()
     {
@@ -46,11 +39,11 @@ public class PlayerController : MonoBehaviour
 
         if (facingLeft == true && inputHorizontal > 0) //If player is moving right then player will face right.
         {
-            Flip();
+            Flip(); //Communicate with the flip void and runs it.
         }
         else if (facingLeft == false && inputHorizontal < 0) //If player is moving left then player will face left.
         {
-            Flip();
+            Flip(); //Communicate with the flip void and plays function.
         }
     }
 
@@ -59,6 +52,6 @@ public class PlayerController : MonoBehaviour
         facingLeft = !facingLeft; //Player will be not be facing left on default.
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1; //Scale of player will be multiplied by -1 meaning it will flip to the left or right.
-        transform.localScale = Scaler;
+        transform.localScale = Scaler; //Players will transform will be adjusted to do a 180 in the correct direction.
     }
 }

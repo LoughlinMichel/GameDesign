@@ -9249,7 +9249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RippleMaterial: {fileID: 2100000, guid: 56228d7de7d1b764db13b4be78021050, type: 2}
   MaxAmount: 25
-  Friction: 0.97
+  Friction: 0.9
 --- !u!1 &914527594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10400,6 +10400,7 @@ MonoBehaviour:
   - Press "A" to move left.
   - Press "W" to jump.
   continueButton: {fileID: 442703898}
+  controller: {fileID: 1647804068}
 --- !u!1 &1851489512
 GameObject:
   m_ObjectHideFlags: 0
